@@ -15,6 +15,7 @@ function CustomInput(props) {
         placeholder={props.placeholder}
         onChange={props.handleChange}
         value={props.value}
+  
       />
       <label className={value && "filled"}>{props.label}</label>
     </div>

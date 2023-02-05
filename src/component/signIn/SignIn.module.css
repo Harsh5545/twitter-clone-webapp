@@ -1,31 +1,101 @@
-.wrapper{
-    width: 37.5rem;
-    height: 40.625rem;
+.wrapper {
+  width: 37.5rem;
+  height: 40.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border-radius: 2.3rem; */
+  /* padding: 0.1rem; */
+}
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    border-radius: 2.3rem;
+}
+.wrapperPassword{
+   
+   
+}
+.twitterIconWrapper{
     margin-top: 0.5rem;
 }
-.btn{
-    background-color: none;
-    border: 1px solid gray;
-    font-size: 1rem;
-    gap:2rem;
-    cursor: pointer;
+.btn {
+  background: none;
+  border: 1px solid gray;
+  font-size: 1rem;
+  gap: 2rem;
+  height: 40px;
+  cursor: pointer;
+  width: 19.5rem;
 }
-h1{
-    font-size: 30px;
-    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+h1 {
+  font-size: 30px;
 
-.nextBtn{
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
 }
-.inputCss{
+.signtext {
+  width: 19rem;
+  text-align: left;
+  margin-top: -0.5rem;
+}
+.nextBtn {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  width: 19.5rem;
+  height: 40px;
+}
+.inputCss {
+  border: 1px solid grey;
+  width: 16.75rem;
+}
+.inputCss2{
     border: 1px solid grey;
+    width: 25.5rem;
+    color: #A9A9A9;
+}
+/* .seprator {
+  composes: flexStyleOne from "../../../src/Common.module.css";
+} */
+.hrlines:before{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 8.2rem;
+    position: absolute;
+    top: 41.5%;
+    left: 0;
+    background: rgb(218, 216, 216);
+    margin-left: 9rem;
+  }
+  .hrlines:after{
+    content:" ";
+    height: 1px;
+    width: 8.2rem;
+    background:rgb(218, 216, 216);
+    display: block;
+    position: absolute;
+    top: 41.5%;
+    right: 0;
+    margin-right: 9rem;
+  }
+h3{
+    font-size: 1rem;
+    margin-top: -0.6rem;
+    height: 0.4rem;   
+}
+.text h4{
+    font-size: 1.2rem   ;
+}
+.text span{
+    margin-left: 0.8rem;
+}
+.loginbtn{
+    width: 27.5rem;
+    height:50px;
+    border: none;
    
 }
