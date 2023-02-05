@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button(props) {
+function CustomButton(props) {
   return (
       <button className={props.customCss} style={{outline:"none", border:"none"}} onClick={props.handleButtonEvent}>
           {props.buttonText}
@@ -9,4 +9,4 @@ function Button(props) {
   )
 }
 
-export default Button
+export default CustomButton
