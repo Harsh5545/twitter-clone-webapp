@@ -78,7 +78,10 @@ function SignInForm() {
                               
                        </div>
                           
-                          <CustomButton buttonText="Next" customCss={style.loginbtn} handleButtonEvent={handle} />
+              <CustomButton buttonText="Next" customCss={style.loginbtn} handleButtonEvent={handle} />
+              <div className={style.text}>
+                          <h4>Don't have an account?<span style={{color:"#00acee"}}>Sign up</span> </h4>
+                            </div>
                           </div>
                 
                     
