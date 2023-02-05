@@ -5,11 +5,11 @@ function SignInForm() {
    
   return (
       <>
-          <Dialog>
+
           <CustomInput label="Phone, Email, or Username"/>
 
 
-          </Dialog>
+          
          
      
       </>
