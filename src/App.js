@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import style from "./App.module.css";
+import Input from "./atoms/Input/Input";
 
 function App() {
+  const [check, setCheck]= useState("")
+  function handle(e) {
+   setCheck(e.target.value)
+ }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input label="hasrh" handleChange={handle} type="password"  />
+   {check}
     </div>
   );
 }
