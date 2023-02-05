@@ -7,6 +7,19 @@ import { FcGoogle } from "react-icons/fc";
 import AppleIcon from "@mui/icons-material/Apple";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Month, Date, Dayy } from "../../component/Dob/Dob";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import { useRecoilState } from "recoil";
+import { isLoginAtom } from "../../Recoil/Atom"
+import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import {
+  isValidEmailSyntax ,
+  isValidMobile,
+  isOnlyLetters,
+  isValidString,
+} from '../../Helper'
+import { nanoid } from "nanoid";
 // import { dateArray,
 //   yearArray,
 //   monthArray,} from "../../ConstData"
@@ -16,6 +29,14 @@ function SignUpForm() {
   const [isOpen, SetisOpen] = useState(true);
   const [form, Setform] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+  const [name , setName] = useState('')
+  const [phone , setPhone] = useState('')
+  const [email , setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  const [data,setData]=useState([])
+  const [loginStatus,setLoginStatus ]= useRecoilState(isLoginAtom);
+
 
   function Form() {
     Setform(true);
@@ -23,6 +44,62 @@ function SignUpForm() {
   function ToggleEU() {
     setToggle(!toggle);
   }
+  function handleName (e) {
+      setName(e.target.value)
+  }
+
+  function handlePhone (e) {
+      setPhone(e.target.value)
+  }
+
+  function handleEmail (e) {
+      setEmail(e.target.value)
+  }
+
+  function handlePassword (e) {
+      setPassword(e.target.value)
+  }
+
+  function handleSubmit (){
+
+    if(!isValidString(name) || !isOnlyLetters(name)){
+        alert('Invalid name !!')
+        return
+    }
+    if(!email && !phone){
+        alert('Please add email or phone to continue !!')
+        return
+    }
+    if(email && !isValidEmailSyntax(email)){
+        alert('Please add proper Email !!')
+        return
+    }
+    if(phone && !isValidMobile(phone)){
+        alert('Please add proper phone !!')
+        return
+    }
+    if(!isValidString(password)){
+        alert('please set your account password !!')
+        return
+    }
+    data.push(userData)
+    setData(data)
+    localStorage.setItem('userData',JSON.stringify(data))
+    localStorage.setItem('loginUser',JSON.stringify(userData))
+   
+
+  toast('sucess')
+  setLoginStatus(true)
+  navigate("/Home")
+}
+ const userData = {
+  // id:Math.floor(Math.random()*1000),
+  id:nanoid(3),
+  name,
+  ...(phone && {phone}),
+  ...(email && {email}),
+  password,
+ }
 
   return (
     <>
@@ -50,7 +127,7 @@ function SignUpForm() {
                     <CustomInput
                       customStyleInput={style.input1}
                       label="Name"
-                      // handleOnchange={handleName}
+                      handleChange={handleName}
                     />
                     </div>
 
@@ -61,7 +138,8 @@ function SignUpForm() {
                           <CustomInput
                             customStyleInput={style.input2}
                             label="Phone"
-                            // handleOnchange={handleMobile}
+                            handleChange={handlePhone}
+                            value={phone}
                           />
                           <span style={{ color: "red" }}></span>
                         </>
@@ -70,7 +148,8 @@ function SignUpForm() {
                           <CustomInput
                             customStyleInput={style.input2}
                             label="email"
-                            // handleOnchange={handleEmail}
+                            handleChange={handleEmail}
+                            value={email}
                           />
                        
                         </>
@@ -87,8 +166,9 @@ function SignUpForm() {
                         <CustomInput
                           customStyleInput={style.input3}
                           label="Password"
-                          // handleOnchange={handlePassword}
+                          handleChange={handlePassword}
                           type={"password"}
+                          value={password}
                         />
                         <span style={{ color: "red" }}></span>
                       </div>
@@ -104,9 +184,15 @@ function SignUpForm() {
                       
                    
                     <div className={style.Dob}>
-                    <Month />
-                    <Date />
-                    <Dayy />
+                    <Month
+                    //  handleOnchange={handleMonth}
+                      />
+                    <Date
+                    //  handleOnchange={handleData}
+                     />
+                    <Dayy
+                    //  handleOnchange={handleDay}
+                     />
                   </div>
                 
                   
@@ -114,7 +200,7 @@ function SignUpForm() {
                   <CustomButton
                       buttonText="Next"
                       customCss={style.formbtn}
-                      // btnNext={submitFunction}
+                      handleButtonEvent={handleSubmit}
                     ></CustomButton>
                   </div>
                  
@@ -164,13 +250,15 @@ function SignUpForm() {
             
                   </div>
                
-                <div className={style.txt3}>Have an Account Already..? <span  style={{color:"#00acee"}}>Log in</span></div>
+                <div className={style.txt3}>Have an Account Already..? <span  style={{color:"#00acee"}}>
+                  <Link style={{ color: "#00acee",textDecoration:'none' } } to='/'>Log in</Link></span></div>
               </>
             )}
           </div>
         </div>
         {/* </div> */}
       </Dialog>
+      <ToastContainer/>
     </>
   );
 }

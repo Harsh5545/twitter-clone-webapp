@@ -1,11 +1,18 @@
-import { useState } from "react";
-import SignInForm from "./component/signIn/SignInForm";
-import SignUpForm from "./component/signUp/SignUpForm";
-
+import SignIn from "./pages/signInpage/signIn";
+import SignUp from "./pages/signUpPage/SignUp";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/HomePage/Home";
 function App() {
   return (
     <>
-      <SignUpForm />
+      {/* <SignUpForm /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignIn/>} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 }
