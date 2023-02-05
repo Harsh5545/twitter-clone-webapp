@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import CustomInput from "../../atoms/Input/CustomInput";
+import CustomInput from "../../atoms/Input/Input";
 import CustomButton from "../../atoms/Button/CustomButton";
 import Dialog from "@mui/material/Dialog";
-import style from "./SignIn.module.css";
+import style from "./SignUpForm.module.css";
+import { FcGoogle } from "react-icons/fc";
+import AppleIcon from "@mui/icons-material/Apple";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import { Month, Date, Dayy } from "../../component/Dob/Dob";
+// import { dateArray,
+//   yearArray,
+//   monthArray,} from "../../ConstData"
 // import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 function SignUpForm() {
@@ -30,10 +37,13 @@ function SignUpForm() {
         {/* <div className={style.container}> */}
         <div className={style.container1}>
           <div className={style.mainContainer}>
+          <div className={style.twitterIconWrapper}>
+          <TwitterIcon fontSize="large" sx={{ color: "#00acee" }} />
+              </div>
             {form ? (
               <>
                 <div className={style.form}>
-                  <div>
+                  <div className={style.formtext1}>
                     <h1>Create your account</h1>
                   </div>
                   <div>
@@ -42,8 +52,9 @@ function SignUpForm() {
                       label="Name"
                       // handleOnchange={handleName}
                     />
+                    </div>
 
-                    <span style={{ color: "red" }}></span>
+                    <span style={{ color: "red" }}></span> 
                     <div className={style.toogleData}>
                       {toggle ? (
                         <>
@@ -61,50 +72,53 @@ function SignUpForm() {
                             label="email"
                             // handleOnchange={handleEmail}
                           />
-                          <span style={{ color: "red" }}></span>
+                       
                         </>
                       )}
-                      <span className={style.toggle} onClick={ToggleEU}>
+                      <span className={style.toggle} style={{color:"#00acee"}} onClick={ToggleEU}>
                         {toggle ? (
                           <h6> Use Email instead </h6>
                         ) : (
                           <h6>Use Phone instead</h6>
                         )}
                       </span>
+                      </div>
                       <div>
                         <CustomInput
-                          customStyleInput={style.input2}
+                          customStyleInput={style.input3}
                           label="Password"
                           // handleOnchange={handlePassword}
                           type={"password"}
                         />
                         <span style={{ color: "red" }}></span>
                       </div>
-                      <div>
-                        <div>
-                          <h4 style={{ color: "white" }}>Date of birth</h4>
-                          <p style={{ color: "grey", width: "27rem" }}>
+                      
+                        <div className={style.text2}>
+                          <h4 style={{ color: "black" }}>Date of birth</h4>
+                          <p style={{ color: "grey" }}>
                             This will not be shown publicly. Confirm your own
                             age, even if this account is for a business, a pet,
                             or something else.
-                          </p>
+                          </p>  
                         </div>
-                      </div>
-                    </div>
-                    {/* <div className={styleDob.container}>
-                    <Month handleOnchange={handleMonth} />
-                    <Date handleOnchange={handleDate} />
-                    <Dayy handleOnchange={handleDay} />
-                  </div> */}
-                    <span style={{ color: "red" }}></span>
+                      
+                   
+                    <div className={style.Dob}>
+                    <Month />
+                    <Date />
+                    <Dayy />
                   </div>
+                
+                  
                   <div>
-                    <CustomButton
-                      buttonText="next"
+                  <CustomButton
+                      buttonText="Next"
                       customCss={style.formbtn}
                       // btnNext={submitFunction}
                     ></CustomButton>
                   </div>
+                 
+                  
                 </div>
               </>
             ) : (
@@ -113,38 +127,44 @@ function SignUpForm() {
                   <i class="fa fa-brands fa-twitter"></i>
                 </p>
                 <h1>Join Twitter today</h1>
-                <div>
+               
                   <CustomButton
-                    icon={<i class="fa fa-brands fa-google"></i>}
+                    // icon={<i class="fa fa-brands fa-google"></i>}
                     buttonText="Sign in with google"
                     customCss={style.CustomButton1}
+                    icons={<FcGoogle />}
                   ></CustomButton>
-                </div>
-                <br />
-                <div>
+                
+                
                   <CustomButton
-                    icon={<i class="fa fa-brands fa-apple"></i>}
+                    // icon={<i class="fas fa-brands fa-apple"></i>}
                     buttonText="Sign in with Apple"
                     customCss={style.CustomButton2}
+                    icons={<AppleIcon />}
                   />
-                </div>
-                <div className={style.or}>
-                  <p className={style.line}>____</p>
-                  OR
-                  <p className={style.line}>____</p>
-                </div>
+              
+                {/* <span className={style.or}>
+                <hr style={{width:"7rem" , height:"0" , marginTop:"1.2rem"}}/>
+                 OR
+                <hr style={{width:"7rem" , height:"0" , marginTop:"1.2rem"}}/>
+                </span> */}
+                  <div className={style.ortext}> <h3 className={style.hrlines}><span style={{color:'black',fontWeight:'lighter'}}>or</span></h3></div>
+                
                 <div className={style.signupbtn}>
                   <CustomButton
                     handleButtonEvent={Form}
-                    buttonText="sign up with phone number or email"
-                    customCss={style.CustomButton2}
+                    buttonText="Create Account"
+                    customCss={style.CustomButton3}
                   />
-                  <p>
-                    By signing up, you agree to the Terms of Service <br />
-                    and Privacy Policy, including Cookie Use.
-                  </p>
-                </div>
-                <div className={style.txt2}>Have an Account Already..?</div>
+                  </div>
+                  <div className={style.para}>
+              
+                    By signing up, you agree to the <span  style={{color:"#00acee"}}>Terms of Service </span>
+                    and<span  style={{color:"#00acee"}}> Privacy Policy</span>, including<span  style={{color:"#00acee"}}> Cookie Use</span>.
+            
+                  </div>
+               
+                <div className={style.txt3}>Have an Account Already..? <span  style={{color:"#00acee"}}>Log in</span></div>
               </>
             )}
           </div>

@@ -1,9 +1,120 @@
 .container1{
-    width:37.5rem;
+    width: 37.5rem;
     height: 40.625rem;
+}
+.mainContainer{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+  /* gap:1rem */
+}
+.CustomButton1 , 
+.CustomButton2{
+    background: none;
+    border: 1px solid gray;
+    font-size: 1rem;
+    gap: 2rem;
+    height: 2.215rem;
+    margin-bottom:0.8rem ;
+    cursor: pointer;
+    width: 19.5rem;
+}
+.CustomButton3{
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    width: 19.5rem;
+    margin-top:0.8rem ;
+    height: 2.215rem;
+}
+
+.hrlines:before{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 8.2rem;
+    position: absolute;
+    top: 42%;
+    left: 0;
+    background: rgb(218, 216, 216);
+    margin-left: 9.5rem;
+  }
+  .hrlines:after{
+    content:" ";
+    height: 1px;
+    width: 8.2rem;
+    background:rgb(218, 216, 216);
+    display: block;
+    position: absolute;
+    top: 42%;
+    right: 0;
+    margin-right: 9.5rem;
+  }
+  .ortext h3{
+  
+        font-size: 1.2rem;
+        margin-top: 0.01rem;  
+        height: 0.4rem;   
+  }
+  .para{
+    width: 19.5rem;
+    padding: 1rem;
+    line-height: 15px;
+    /* height: 0.2rem; */
+  }
+  .txt3{
+    width: 19.5rem;
+    margin-top: 1.5rem;
+  }
+  .input1,
+  .input3,
+  .input2{
+    border: 1px solid grey;
+    width: 25.5rem;
+    color: #A9A9A9;
+    margin-bottom: 0.5rem;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ .toggle h6{
+    font-size: 0.8rem;
+    text-align: end;
+    padding:0rem;
+    margin:0;
+    line-height: 20px;
+    margin-block-end: 20px;
+    margin-block-start: 0;
+ }
+.text2{
+    width: 27.5rem;
+    margin-bottom: 0.5rem;
+   
+}
+.text2 h4{
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+.text2 p {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 15px;
+    line-height: 15px;
+    
+}
+.Dob{
+  display: flex;
+  width: 27.5rem;
+  gap:1rem
+}
+.formbtn{
+    margin-top: 1rem;
+    width: 27.5rem;
+    height:3.156rem;
+    border: none;
+    background-color: #393B3C;
+    color: #fff;
+    font-size: 1.1rem;
 }
