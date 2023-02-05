@@ -2,7 +2,7 @@ import React from 'react'
 
 function CustomButton(props) {
   return (
-      <button className={props.customCss} style={{outline:"none", border:"none"}} onClick={props.handleButtonEvent}>
+      <button className={`${style.inputField} ${props.customCss}`} style={{outline:"none", border:"none"}} onClick={props.handleButtonEvent}>
           {props.buttonText}
           
     </button>
