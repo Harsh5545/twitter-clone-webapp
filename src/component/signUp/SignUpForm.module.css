@@ -1,0 +1,9 @@
+.container1{
+    width:37.5rem;
+    height: 40.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
