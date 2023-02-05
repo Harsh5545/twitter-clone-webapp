@@ -4,7 +4,7 @@ import Dialog from "@mui/material/Dialog";
 import CustomButton from "../../atoms/Button/CustomButton";
 import style from "./SignIn.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import GoogleIcon from "@mui/icons-material/Google";
+
 import { FcGoogle } from "react-icons/fc";
 // import FcGoogle from 'react-icons/fc'
 import AppleIcon from "@mui/icons-material/Apple";

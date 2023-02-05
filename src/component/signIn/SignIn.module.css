@@ -14,10 +14,7 @@
     align-items: center;
     gap: 1rem;
 }
-.wrapperPassword{
-   
-   
-}
+
 .twitterIconWrapper{
     margin-top: 0.5rem;
 }
@@ -26,7 +23,7 @@
   border: 1px solid gray;
   font-size: 1rem;
   gap: 2rem;
-  height: 40px;
+  height: 2.215rem;
   cursor: pointer;
   width: 19.5rem;
 }
@@ -46,7 +43,7 @@ h1 {
   color: #fff;
   cursor: pointer;
   width: 19.5rem;
-  height: 40px;
+  height: 2.215rem;
 }
 .inputCss {
   border: 1px solid grey;
@@ -66,10 +63,10 @@ h1 {
     height: 1px;
     width: 8.2rem;
     position: absolute;
-    top: 41.5%;
+    top: 40%;
     left: 0;
     background: rgb(218, 216, 216);
-    margin-left: 9rem;
+    margin-left: 9.5rem;
   }
   .hrlines:after{
     content:" ";
@@ -78,24 +75,27 @@ h1 {
     background:rgb(218, 216, 216);
     display: block;
     position: absolute;
-    top: 41.5%;
+    top: 40%;
     right: 0;
-    margin-right: 9rem;
+    margin-right: 9.5rem;
   }
 h3{
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: -0.6rem;
     height: 0.4rem;   
 }
+.text{
+  width: 18.5rem;
+}
 .text h4{
-    font-size: 1.2rem   ;
+    font-size: 0.9rem   ;
 }
 .text span{
     margin-left: 0.8rem;
 }
 .loginbtn{
     width: 27.5rem;
-    height:50px;
+    height:3.156rem;
     border: none;
    
 }
